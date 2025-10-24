@@ -1,0 +1,80 @@
+:root {
+    --accmo-primary: #dd5f7b;
+    --accmo-primary-dark: #C03547;
+    --accmo-dark: #0c0c0c;
+    --accmo-light: #e5e5e6;
+    --accmo-white: #ffffff;
+    --accmo-font: "Inter", sans-serif;
+}
+
+body {
+    background-color: var(--accmo-primary-dark);
+    color: var(--accmo-dark);
+    font-family: var(--accmo-font)
+}
+
+/* Navbar styling */
+.navbar-custom {
+    background-color: var(--accmo-white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.50rem;
+    color: var(--accmo-primary);
+    letter-spacing: 0.5px;
+}
+
+.navbar-brand img {
+    background-color: var(--accmo-dark);
+    height: 60px;
+    width: auto;
+}
+
+.navbar-brand:hover {
+    color: var(--accmo-primary-dark);
+}
+
+.nav-link {
+    color: var(--accmo-dark);
+    font-weight: 500;
+    margin: 0 0.7rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background-color: var(--accmo-primary);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--accmo-primary);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Sticky and glass effect */
+.navbar-custom.fixed-top {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+/* Mobile menu toggler color */
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%230c0c0c' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
