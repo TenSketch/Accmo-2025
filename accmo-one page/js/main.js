@@ -1,3 +1,4 @@
+// Services Section
 const services = [
   {
     title: "Manpower Supply",
@@ -59,4 +60,28 @@ window.addEventListener("scroll", () => {
     const elementTop = el.getBoundingClientRect().top;
     if (elementTop < windowHeight - 100) el.classList.add("active");
   });
+});
+
+
+// Footer Section
+
+const contactBtn = document.getElementById("contactBtn");
+const contactForm = document.getElementById("contactForm");
+const contactFormEl = document.getElementById("contactFormEl");
+
+// Toggle form visibility
+contactBtn.addEventListener("click", () => {
+  contactForm.classList.toggle("active");
+});
+
+// Validation & fake submission
+contactFormEl.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (!contactFormEl.checkValidity()) {
+    contactFormEl.classList.add("was-validated");
+    return;
+  }
+  alert("Message sent successfully!");
+  contactFormEl.reset();
+  contactForm.classList.remove("active");
 });
